@@ -60,7 +60,11 @@
               <div class="book-detail-block__action__inner">
                 <div class="book-detail-block__action__reacts"><a class="book-detail-block__action__reacts__share waves-effect waves-light" href="javascript:showShareContent()">
                     <div class="book-detail-block__action__reacts__share__icon"></div>
-                    <div class="book-detail-block__action__reacts__share__title" data-text="sd__detail_block__share__title"></div></a></div>
+                    <div class="book-detail-block__action__reacts__share__title" data-text="sd__detail_block__share__title"></div></a>
+                    <a class="book-detail-block__action__reacts__pdf waves-effect waves-light" target="_blank">
+                      <div class="book-detail-block__action__reacts__pdf__icon"></div>
+                    <div class="book-detail-block__action__reacts__pdf__title">PDF</div></a>
+                  </div>
                 <div class="book-detail-block__action__app-button"><a class="app-button waves-effect waves-light" href="javascript:openApp()">
                     <div class="book-detail-block__action__app-button__icon"></div>
                     <div class="book-detail-block__action__app-button__title" data-text="sd__detail_block__app_button__text"></div></a></div>
@@ -555,6 +559,14 @@
           }
         }
 
+        // PDF下载
+        (function(){
+          let pdfLink = "";
+          let totalparams = getParams();
+          pdfLink = totalparams['shareBaseUrl'].replace(/index.html$/, "") + "original.pdf";
+          $(".book-detail-block__action__reacts__pdf").attr('href',pdfLink);
+        })()
+
         $(function(){
             var _params = getParams();
             if(_params["contentInfoDispFlg"] == 0){
@@ -580,6 +592,10 @@
             if($(".book-detail-block__action__app-button").length == 0 
                     && $(".book-detail-block__action__reacts__share").length == 0){
               $(".book-detail-block__action").remove();
+            }
+
+            if(_params["pdfOutputFlg"] == 0){
+              $(".book-detail-block__action__reacts__pdf").remove();
             }
             
         });

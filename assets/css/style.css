@@ -29335,10 +29335,13 @@ ul.wizard-nav-steps li > .title {
   font-size: 13px;
   line-height: 13px;
 }
-.book-detail--sd .book-detail-block__action__reacts__share__icon:before,
-.book-detail--sd .book-detail-block__action__reacts__pdf__icon:before {
+.book-detail--sd .book-detail-block__action__reacts__share__icon:before {
   font-family: "xiconbasic";
   content: "";
+}
+.book-detail--sd .book-detail-block__action__reacts__pdf__icon:before {
+  font-family: "xiconbasic";
+  content: "";
 }
 .book-detail--sd .book-detail-block__action__reacts__share__title,
 .book-detail--sd .book-detail-block__action__reacts__pdf__title {

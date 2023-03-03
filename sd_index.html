@@ -15,6 +15,9 @@
           background-image: none;
           background-color: #cac9cd;
       }
+      .book-detail--pc .book-detail-block__action-pc {
+        display: block;
+      }
 
       .book-detail--sd .book-detail-block__viewer-dummy:before {
         padding-top: 0;
@@ -61,9 +64,9 @@
                 <div class="book-detail-block__action__reacts"><a class="book-detail-block__action__reacts__share waves-effect waves-light" href="javascript:showShareContent()">
                     <div class="book-detail-block__action__reacts__share__icon"></div>
                     <div class="book-detail-block__action__reacts__share__title" data-text="sd__detail_block__share__title"></div></a>
-                    <a class="book-detail-block__action__reacts__pdf waves-effect waves-light" target="_blank">
-                      <div class="book-detail-block__action__reacts__pdf__icon"></div>
-                    <div class="book-detail-block__action__reacts__pdf__title">PDF</div></a>
+                    <a class="book-detail-block__action__reacts__print waves-effect waves-light printDisplay" href="javascript:showPrintDialogContent()">
+                      <div class="book-detail-block__action__reacts__print__icon"></div>
+                      <div class="book-detail-block__action__reacts__share__title" data-text='pc__detail_block__print__title' ></div></a>          
                   </div>
                 <div class="book-detail-block__action__app-button"><a class="app-button waves-effect waves-light" href="javascript:openApp()">
                     <div class="book-detail-block__action__app-button__icon"></div>
@@ -559,13 +562,12 @@
           }
         }
 
-        // PDF下载
-        (function(){
-          let pdfLink = "";
-          let totalparams = getParams();
-          pdfLink = totalparams['shareBaseUrl'].replace(/index.html$/, "") + "original.pdf";
-          $(".book-detail-block__action__reacts__pdf").attr('href',pdfLink);
-        })()
+        function showPrintDialogContent(){
+          var subWindow = $("#actibookoneFrame")[0] && $("#actibookoneFrame")[0].contentWindow;
+          if(subWindow && subWindow.showPrintDialogContent) {
+            subWindow.showPrintDialogContent();
+          }
+        }
 
         $(function(){
             var _params = getParams();
@@ -592,10 +594,6 @@
             if($(".book-detail-block__action__app-button").length == 0 
                     && $(".book-detail-block__action__reacts__share").length == 0){
               $(".book-detail-block__action").remove();
-            }
-
-            if(_params["pdfOutputFlg"] == 0){
-              $(".book-detail-block__action__reacts__pdf").remove();
             }
             
         });

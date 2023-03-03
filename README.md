@@ -1,1 +1,0 @@
-# pamflet3dEditSpOnly

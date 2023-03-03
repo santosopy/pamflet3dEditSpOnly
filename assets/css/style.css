@@ -29257,18 +29257,21 @@ ul.wizard-nav-steps li > .title {
 }
 .book-detail--sd .book-detail-block__action__reacts__like,
 .book-detail--sd .book-detail-block__action__reacts__comment,
-.book-detail--sd .book-detail-block__action__reacts__share {
+.book-detail--sd .book-detail-block__action__reacts__share,
+.book-detail--sd .book-detail-block__action__reacts__pdf {
   padding: 0 4px;
 }
 .book-detail--sd .book-detail-block__action__reacts__like > div,
 .book-detail--sd .book-detail-block__action__reacts__comment > div,
-.book-detail--sd .book-detail-block__action__reacts__share > div {
+.book-detail--sd .book-detail-block__action__reacts__share > div,
+.book-detail--sd .book-detail-block__action__reacts__pdf > div {
   display: inline-block;
   vertical-align: middle;
 }
 .book-detail--sd .book-detail-block__action__reacts__like__icon,
 .book-detail--sd .book-detail-block__action__reacts__comment__icon,
-.book-detail--sd .book-detail-block__action__reacts__share__icon {
+.book-detail--sd .book-detail-block__action__reacts__share__icon,
+.book-detail--sd .book-detail-block__action__reacts__pdf__icon {
   display: inline-block;
   width: 22px;
   height: 22px;
@@ -29279,7 +29282,9 @@ ul.wizard-nav-steps li > .title {
 .book-detail--sd .book-detail-block__action__reacts__comment__icon:before,
 .book-detail--sd .book-detail-block__action__reacts__comment__icon:after,
 .book-detail--sd .book-detail-block__action__reacts__share__icon:before,
-.book-detail--sd .book-detail-block__action__reacts__share__icon:after {
+.book-detail--sd .book-detail-block__action__reacts__share__icon:after,
+.book-detail--sd .book-detail-block__action__reacts__pdf__icon:before,
+.book-detail--sd .book-detail-block__action__reacts__pdf__icon:after {
   font-family: "xiconbasic";
   line-height: 22px;
   vertical-align: top;
@@ -29330,11 +29335,13 @@ ul.wizard-nav-steps li > .title {
   font-size: 13px;
   line-height: 13px;
 }
-.book-detail--sd .book-detail-block__action__reacts__share__icon:before {
+.book-detail--sd .book-detail-block__action__reacts__share__icon:before,
+.book-detail--sd .book-detail-block__action__reacts__pdf__icon:before {
   font-family: "xiconbasic";
   content: "";
 }
-.book-detail--sd .book-detail-block__action__reacts__share__title {
+.book-detail--sd .book-detail-block__action__reacts__share__title,
+.book-detail--sd .book-detail-block__action__reacts__pdf__title {
   padding: 3px 0 0 4px;
   font-size: 13px;
   line-height: 13px;
